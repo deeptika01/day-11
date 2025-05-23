@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main()
+{
+     char str[]="deeptika";
+   //scanf("%[^\n]", &str);
+   printf("%d ",sizeof(str));
+
+
+    return 0;
+}
