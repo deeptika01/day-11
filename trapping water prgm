@@ -1,0 +1,24 @@
+int trap(int * height, int heightsize){
+    int LM[heightsize];
+    int RM[heightsize]; 
+    int max=0;
+    for(int i=0;i<heightsize;i++){
+         if(max<height[i])
+         max=height[i];
+         LM[i]=max;
+        
+    }
+
+    max=0;
+    for(int i=heightsize-1;i>=0;i--){
+        if(max<height[i])
+        max=height[i];
+        RM[i]=max;
+    }
+    int water=0;
+    for(int i=0;i<heightsize;i++){
+        
+        water+=(LM[i]<RM[i])?(LM[i]-height[i]):(RM[i]-height[i]);
+    }
+    return water;
+}
